@@ -48,8 +48,10 @@ CFTTL=120
 FORCE=false
 
 CFFILE_PATH=/$HOME/.cf
-
-WANIPSITE="http://v4.ipv6-test.com/api/myip.php"
+# URL获取IP
+# WANIPSITE="http://v4.ipv6-test.com/api/myip.php"
+# 接口地址
+WANIPSITE="$/sbin/ifconfig ethX | awk '/inet addr/ {print $2}' | cut -f2 -d ":""
 
 NOW_DATE_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 
@@ -100,7 +102,8 @@ if [ "$CFRECORD_NAME" != "$CFZONE_NAME" ] && ! [ -z "${CFRECORD_NAME##*$CFZONE_N
 fi
 
 # Get current and old WAN ip
-WAN_IP=`curl -s ${WANIPSITE}`
+# WAN_IP=`curl -s ${WANIPSITE}`
+WAN_IP=$/sbin/ifconfig eth2.2 | awk '/inet addr/ {print $2}' | cut -f2 -d ":"
 WAN_IP_FILE=$CFFILE_PATH/.cf-wan_ip_$CFRECORD_NAME.txt
 if [ -f $WAN_IP_FILE ]; then
   OLD_WAN_IP=`cat $WAN_IP_FILE`
