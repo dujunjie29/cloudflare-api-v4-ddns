@@ -30,13 +30,13 @@ set -o nounset
 # default config
 
 # API Token, see https://dash.cloudflare.com/profile/api-tokens,
-CFTOKEN=
+CFTOKEN=G0lxxAuXzgfAP-1TFOvGD6Q84B-hErm_FpzHsEpw
 
 # Zone name, eg: example.com
-CFZONE_NAME=
+CFZONE_NAME=dujunjie29@gmail.com
 
 # Hostname to update, eg: homeserver.example.com or example.com
-CFRECORD_NAME=
+CFRECORD_NAME=dydcreator.ml
 
 # Record type, A(IPv4)|AAAA(IPv6), default IPv4
 CFRECORD_TYPE=A
